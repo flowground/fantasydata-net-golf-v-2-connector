@@ -1,0 +1,266 @@
+{
+    "title": "Golf v2",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/fantasydata.net/golf-v2/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.fantasydata.net/golf/v2",
+                    "https://api.fantasydata.net/golf/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apiKeyHeader": {
+                "label": "Ocp-Apim-Subscription-Key (apiKeyHeader)",
+                "viewClass": "TextFieldView"
+            },
+            "apiKeyQuery": {
+                "label": "subscription-key (apiKeyQuery)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "DfsSlates": {
+            "main": "./lib/actions/DfsSlates.js",
+            "title": "DFS Slates",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DfsSlates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Injuries": {
+            "main": "./lib/actions/Injuries.js",
+            "title": "Injuries",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Injuries.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "InjuriesHistorical": {
+            "main": "./lib/actions/InjuriesHistorical.js",
+            "title": "Injuries (Historical)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/InjuriesHistorical.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Leaderboard": {
+            "main": "./lib/actions/Leaderboard.js",
+            "title": "Leaderboard",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Leaderboard.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "News": {
+            "main": "./lib/actions/News.js",
+            "title": "News",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/News.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "NewsByDate": {
+            "main": "./lib/actions/NewsByDate.js",
+            "title": "News by Date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/NewsByDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "NewsByPlayer": {
+            "main": "./lib/actions/NewsByPlayer.js",
+            "title": "News by Player",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/NewsByPlayer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Player": {
+            "main": "./lib/actions/Player.js",
+            "title": "Player",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Player.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PlayerSeasonStatsWWorldGolfRankings": {
+            "main": "./lib/actions/PlayerSeasonStatsWWorldGolfRankings.js",
+            "title": "Player Season Stats (w/ World Golf Rankings)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PlayerSeasonStatsWWorldGolfRankings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PlayerTournamentProjectedStatsWDraftkingsSalaries": {
+            "main": "./lib/actions/PlayerTournamentProjectedStatsWDraftkingsSalaries.js",
+            "title": "Player Tournament Projected Stats (w/ DraftKings Salaries)",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PlayerTournamentProjectedStatsWDraftkingsSalaries.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PlayerTournamentStatsByPlayer": {
+            "main": "./lib/actions/PlayerTournamentStatsByPlayer.js",
+            "title": "Player Tournament Stats By Player",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PlayerTournamentStatsByPlayer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Players": {
+            "main": "./lib/actions/Players.js",
+            "title": "Players",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Players.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Schedule": {
+            "main": "./lib/actions/Schedule.js",
+            "title": "Schedule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Schedule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ScheduleBySeason": {
+            "main": "./lib/actions/ScheduleBySeason.js",
+            "title": "Schedule by Season",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ScheduleBySeason.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
